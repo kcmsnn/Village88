@@ -1,0 +1,78 @@
+body{    
+    margin: 0;
+    padding: 0;
+}
+
+#maincontainer{
+    display: flex;    
+    height: 799px;
+}
+
+#container1 , #container3{
+    flex: 1;
+    justify-content: center;
+    background: url('1942.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+}
+#container2{
+    flex: 2;
+    background: url('background.png'); 
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+}
+
+#scorebox{   
+    margin: 0 auto;
+    background-color:black;
+    border: 5px solid red;
+    height: 200px;
+    text-align: center;
+    font-size:30px;
+    font-family: Arial;	
+    color: rgb(201, 76, 76);
+}
+
+#hero{
+    background: url('1942.gif');
+    background-position: -85px -180px;
+    width:28px;
+    height:28px;
+    top: 500px;
+    left: 390px;
+    position:absolute;
+}
+#enemy1{
+    background: url('1942.gif');
+    background-position: -30px -10px;
+    width:28px;
+    height:28px;
+    position:absolute;
+}
+#enemy2{
+    background: url('1942.gif');
+    background-position: -57px -65px;
+    width:20px;
+    height:20px;
+    position:absolute;
+}
+.bullet{
+    background: url('1942.gif');
+    background-position: -185px -400px;
+    width:18px;
+    height:18px;
+    position:absolute;
+}
+
+/*Explosion animation*/
+
+#explosion{
+    background: url('1942.gif');
+    background-position: -6px -396px;
+    width:20px;
+    height:20px;
+    position:absolute;
+}   

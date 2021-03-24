@@ -1,0 +1,50 @@
+*{
+    outline: 1px solid palevioletred;
+    margin: 0px;
+    padding: 0px;
+}
+@media only screen and (max-width: 480px){
+    .gadget::after{
+        content: "Phone";
+    }
+    .width::after{
+        content: 'less than or equal to 480px';
+        font-weight: bold;
+    }
+}
+
+@media only screen and (min-width: 481px){
+    .gadget::after{
+        content: "Tablet";
+    }
+    .width::after{
+        content: 'Between 481px or 1023px';
+        font-weight: bold;
+    }
+}
+
+@media only screen and (min-width: 1024px){
+    .gadget::after{
+        content: "Desktop";
+    }    
+    .width::after{
+        content: 'greater than or equal to 1024px';
+        font-weight: bold;
+    }
+}
+.container{
+    margin: 0px auto;
+}
+
+.row-1{
+    border: 1px solid yellow;
+    background-color: #aaaaaa;
+}
+.row-2{
+    border: 1px solid yellow;
+    background-color: #c5c5c5;
+}
+.row-3{
+    border: 1px solid yellow;
+    background-color: #ffff8f;
+}

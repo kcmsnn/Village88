@@ -1,0 +1,211 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
+*{
+    padding: 0px;
+    margin: 0px;
+    font-family:Roboto;
+}
+
+
+.wrapper{
+    position: relative;
+    margin: 0px auto;
+    width: 795px;
+    height: 750px;
+}
+    .header-container{
+        height: 120px;
+    }
+        .header-container img{
+            position: absolute;
+            height: 90px;
+            width: 90px;
+        }
+        .header-container h1{
+            padding-top: 17px;
+            vertical-align: bottom;
+            display: inline-block;
+            margin-left: 90px;
+            font-size: 30pt;
+        }
+            .header-container h1 span{
+                color: #22659e;
+            }
+        .header-container .blue-panel{
+            background-color: #3a74a5;
+            min-height: 55px;
+            width: 795px;
+            display: inline-block;
+        }
+            .header-container .blue-panel h2{
+                padding: 0px;
+                color: #f7f9fb;
+                margin-top: 8px;                
+                margin-left: 20px;
+                font-size: 22pt;
+            }
+
+    .side-bar{
+        width: 190px;
+        position: relative;
+        display: inline-block;
+        vertical-align: top;
+    }        
+        section h4,h5{
+            white-space: normal;
+            text-align: left;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        section h4{            
+            margin-top: 20px;
+        }
+            h4 span{
+                color: red;
+                font-family: Arial, Helvetica, sans-serif;
+            }
+        section h5{
+            margin-top: 10px;
+            margin-bottom: 20px;
+        }
+            h5 span{
+                color: #22659e;
+                font-family: Arial, Helvetica, sans-serif;
+            }
+    .side-bar a{
+        display: block;
+        text-align: center;
+        padding: 5px;
+        border-radius: 10px;
+        font-weight: bolder;
+        color: white;
+        margin-top: 5px;
+        text-decoration: none;
+    }
+    .side-bar .watch-button{
+        background-color: #22659e;
+    }
+    .side-bar .resources-button{
+        background-color: #ed911f;
+        margin-bottom: 20px;
+    }
+        .advertisment{
+            margin-top: 20px;
+            background: url('images/ad_background.png');
+            background-repeat: no-repeat;
+            height: 250px;
+        }
+            .advertisment h3{
+                color: white;
+                text-align: center;
+                font-size: 16pt;
+                padding: 17px 12px 0px 12px;
+            }
+            .advertisment img{
+                height: 100px;
+                width: 80px;
+                margin-left: 55px;
+            }
+            
+        .advertisment .learn-button{
+            margin: 0px 10px;
+            background-color: #48cadf;
+        }
+    .main-content-container{
+        display: inline-block;
+        vertical-align: top;
+        width: 571px;
+        margin-left: 30px;
+    }
+        .main-content-header{
+            min-height: 60px;
+        }
+            .main-content-header img{
+                margin-top: 10px;
+                vertical-align: top;
+                display: inline-block;
+                height: 20px;
+                width: 20px;
+            }
+            .main-content-header h3{
+                vertical-align: top;
+                display: inline-block;
+                margin-top: 13px;
+                font-size: 14px;
+                color: #22659e;
+            }
+            .main-content-header .contact-information{
+                vertical-align: top;
+                display: inline-block;
+                min-height: 60px;
+                width: 204px;  
+                margin-left: 295px;              
+            }
+                .contact-information img{
+                    vertical-align: middle;
+                    display: inline-block;
+                    margin-top: 10px;
+                    height: 40px;
+                    width: 40px;
+                }
+                    .contact-information .information{
+                        vertical-align: top;
+                        display: inline-block;   
+                        width: 150px;
+                    }
+                    .contact-information .information h6, .contact-information .information > h2{
+                            display: block; 
+                            text-align: right;              
+                        }
+                    .contact-information .information > h2{
+                        color: #48cadf;
+                    }
+        .main-content{
+            height: 570px;
+        }
+            .main-content h3{
+                margin-top: 10px;
+                color: #22659e;
+            }
+            .main-content section p,.main-content section h4, .main-content section ol, .main-content .big-3 p{
+                vertical-align: top;
+                display: inline-block;
+                white-space: normal;
+                font-family: Arial, Helvetica, sans-serif;
+                margin: 0px;
+                font-size: 12px;
+            }
+            .main-content section ul ,.main-content section ol{
+                margin-left: 30px;
+            }
+            .main-content span{
+                color: #48cadf;
+            }
+            .main-content img{
+                display: inline-block;
+                margin: 8px 0px 0px 120px;
+                height: 110px;
+                width: 300px;
+            }
+            .main-content .big-3{
+                border: 5px solid #2496e4;
+                padding: 5px;
+                width: 545px;
+            }
+            .main-content .big-3 img{
+                vertical-align: top;
+                display: inline-block;
+                margin: 0px;
+                height: 100px;
+                width: 100px;
+            }
+                .big-3-information h3{
+                    margin: 0px;
+                } 
+                .big-3-information{
+                    vertical-align: top;
+                    display: inline-block;
+                    width: 440px;
+                }
+                    .big-3-information a{
+                        text-decoration: none;
+                        color: #48cadf;
+                    }

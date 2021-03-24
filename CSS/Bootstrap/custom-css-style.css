@@ -1,0 +1,28 @@
+.big-banner{
+    background-image: url('images/bg.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    border-radius: unset;
+}
+
+.jumbotron-h{
+    height: 100vh;
+    margin-bottom: 0px;
+}
+
+.text-height{
+    font-size: 200px;
+}
+
+.img-5{
+    height: 500px;
+    width: 500px;
+}
+
+.mt-x{
+    margin-top: 140px;
+}
+.mb-x{
+    margin-bottom: 140px;
+}

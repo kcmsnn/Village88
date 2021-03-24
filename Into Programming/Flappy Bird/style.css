@@ -1,0 +1,76 @@
+body{    
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+
+#container-1 {
+    height: 799px;
+    background: url('Background.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size:cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#map{
+    background: url('spritesheet.png');
+    background-position: 0px 0px;
+    background-repeat: no-repeat;
+    height: 500px;
+    width: 315px;
+    position: absolute; 
+    overflow: hidden;
+}
+#ground-1, #ground-2, #ground-3{
+    background: url('spritesheet.png');
+    background-position: -324px 6px;
+    background-repeat: no-repeat;
+    height: 115px;
+    width: 315px;
+    position: absolute;
+}
+#flappy{
+    background: url('spritesheet.png');
+    background-position: -581px -168px;
+    background-repeat: no-repeat;
+    height: 40px;
+    width: 40px;
+    top: 250px;
+    left: 100px;
+    position: absolute; 
+}
+.upper-tube{
+    background: url('spritesheet.png');
+    background-position: -667px 0px;
+    background-repeat: no-repeat;
+    height: 264px;
+    width: 57px;
+    top: -100px;
+    left: 100px; /* 350 */
+    position: absolute;
+}
+.lower-tube{
+    background: url('spritesheet.png');
+    background-position: -729px 0px;
+    background-repeat: no-repeat;
+    height: 236px;
+    width: 57px;
+    top: 300px;
+    left: 100px;
+    position: absolute;
+}
+
+@font-face{
+    font-family: Flappy Bird;
+    src: url('flappy-bird-font.ttf');
+}
+#score{
+    font-family: Flappy Bird;
+    font-size: 50px;
+    margin-top: 30px;
+    text-align: center;
+
+}

@@ -1,0 +1,88 @@
+body{
+	margin: 0px auto;
+	padding: 0px auto;
+}
+div#container{
+	padding: 0px ;
+	height: 799px;
+	background-color: black;
+}
+div#pacman{
+	background-image: url('pacman.gif');
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	width: 20px;
+	height: 20px;
+	position: absolute;
+}
+div#ghost1{
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	width: 20px;
+	height: 20px;
+	position: absolute;
+	background-image: url('G1.png');
+}
+div#ghost2{
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	width: 20px;
+	height: 20px;
+	position: absolute;
+	background-image: url('G2.png');
+}
+div#score{
+	width: 50px;
+	height: 50px;
+	text-align: center;
+	color: red;	
+}
+div.points{
+	width: 50px;
+	height: 50px;
+	text-align: center;
+	color: blue;	
+}
+div.row div{	
+	margin: 0px;
+	height: 20px;
+	display: inline-block;
+}
+div.brick{
+	background-image: url('brick1.png');
+	background-position: center;
+	background-repeat: no-repeat;	
+	width: 20px;
+	height: 20px;
+	background-size: 100%;
+}
+div.empty{
+	width: 20px;
+	height: 20px;
+}
+div.coin {
+	background: url('coin.gif');
+	background-position: center;
+	background-repeat: no-repeat;	
+	width: 20px;
+	height: 20px;
+	background-size: 50%;
+}
+div.cherry{
+	background: url('cherry.png');
+	background-position: center;
+	background-repeat: no-repeat;	
+	width: 20px;
+	height: 20px;
+	background-size: 50%;
+	visibility: hidden;
+}
+div#gameover{
+	width: 50px;
+	height: 50px;
+	text-align: center;
+	color: red;
+}

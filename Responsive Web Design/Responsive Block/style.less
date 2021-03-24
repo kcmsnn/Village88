@@ -1,0 +1,106 @@
+/*CSS reset settings here*/
+*{
+    margin: 0px;
+    padding: 0px;
+   }
+   body{
+       min-width: 320px;
+   }
+   #wrapper{
+    width: 950px;
+    background-color: silver;
+    margin: 0px auto;
+    padding: 20px;
+   }
+   #header{
+    min-height: 150px;
+    background-color: green;
+    display: block;
+    margin-bottom: 1.5em;
+   }
+   #navigation{
+    min-height: 300px;
+   // width: 23%;
+    background-color: blue;
+    margin-right: 1.4em;
+    display: inline-block;
+    vertical-align: top;
+   }
+   #main_content{
+    display: inline-block;
+    vertical-align: top;
+    min-height: 400px;
+    width: 70%;
+    background-color: red;
+    padding: 0em 1em;
+   }
+   .subcontents{
+    min-height: 200px;
+    width: 30%;
+    background-color: yellow;
+    display: inline-block;
+    margin: 1em .6em;
+   }
+   #advertisement{
+    min-height: 120px;
+    width: auto;
+    margin: 0em .6em;
+    background-color: purple;
+   }
+@media only screen and (max-width: 480px){
+       #navigation{
+        display: none;
+       }
+       #main_content{
+        display: block;
+        width: auto;
+        padding: 1em;
+       }
+       .subcontents{
+        min-height: 200px;
+        width: auto;
+        background-color: yellow;
+        display: block;
+       }
+}
+
+@media only screen and (min-width: 481px){
+    #navigation{
+        display: none;
+       }
+       #main_content{
+        display: block;
+        width: auto;
+        padding: 1em;
+       }
+       .subcontents{
+        min-height: 200px;
+        width: 47%;
+        background-color: yellow;
+        display: inline-block;
+        vertical-align: top;
+       }
+}
+
+@media only screen and (min-width: 1024px){
+    #header{
+        display: block;
+    }
+    #navigation{
+        width: 23%;
+        display: inline-block;
+        vertical-align: top;
+    }
+    #main_content{
+        display: inline-block;
+        vertical-align: top;
+        width: 70%;
+    }
+    .subcontents{
+        width: 30%;
+        display: inline-block;
+    }
+    #advertisement{
+        width: auto;
+    }    
+}

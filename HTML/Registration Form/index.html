@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name = "viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Form</title>
+</head>
+<body>
+    
+    <h1>Registration Form</h1>  
+    <table >    
+        <tr>
+            <td><label for="first_name">First Name:</label></td>
+            <td><input type = "text" id="first_name" name = "first_name"></td>
+        </tr>
+        <tr>
+            <td><label for="first_name">Last Name:</label></td>
+            <td><input type = "text" id="last_name" name = "last_name"></td>
+        </tr>
+        <tr>
+            <td><label for="email">Email Address:</label></td>
+            <td><input type = "text" id="email" name = "email"></td>
+        </tr>
+        <tr>
+            <td><label for="password">Password:</label></td>
+            <td><input type = "password" id="password" name = "password"></td>
+        </tr>
+        <tr>
+            <td><label for="confirm_password">Confirm Password:</label></td>
+            <td><input type = "password" id="confirm_password" name = "confirm_password"></td>
+        </tr>
+        <tr>
+            <td><label for="birthday">Birthday:</label></td>
+            <td><input type = "date" id="birthday" name = "birthday"></td>
+        </tr>
+        <tr>
+            <td>
+                <input type = "radio" value = "male" name = "gender" id="male">
+                <Label for="male">Male</Label> 
+                <input type = "radio" value = "female" name = "gender" id="female">
+                <Label for="female">Female</Label>
+            </td>
+            <td>   
+                <input type = "radio" value = "decline" name = "gender" id="decline">
+                <Label for="decline">I prefer not to say</Label>
+            </td>
+        </tr>
+        <tr>
+            <td colspan = "2">
+                <label for="description"> A short description of myself:</label><br>
+                <textarea name = "description" id="description" cols="40" rows="5"></textarea>
+            </td>
+        </tr> 
+        <tr>
+            <td><label for="favourite">Favourite language:</label>:</td>
+            <td>
+                <select name = "favourite" id="favourite">
+                    <option value = "javascript">Javascript</option>
+                    <option value = "html">HTML</option>
+                    <option value = "css">CSS</option>
+                    <option value = "php">PHP</option>
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <td colspan = "2">
+                <input type="checkbox" id="agree" name="agree" value="agree"><p> Yes, I would like to receive periodic email updates</p>
+            </td>
+        </tr>
+        <tr>
+            <td colspan = "2">
+                <input type="submit" value="Create Account">
+            </td>
+        </tr>   
+    </table>
+</body>
+</html>

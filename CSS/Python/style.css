@@ -1,0 +1,179 @@
+*{
+    padding: 0px;
+    margin: 0px;
+    color: white;
+    font-family: Arial, Helvetica, sans-serif
+}
+
+.wrapper{
+    background-color: #245076;
+    width: 970px;
+    min-height: 767px;
+}
+
+.header{
+    min-height: 120px;
+    display: block;
+}
+    .header .logo{
+        margin: 20px 350px 20px 20px;
+        vertical-align: top;
+        height: 90px;
+        display: inline-block;
+    }
+    .header .search-box-container{
+        margin: 10px 0px;
+        display: inline-block;
+        vertical-align: top;
+        text-align: right;
+        height: 90px;
+    }
+        .search-box-container p{
+            font-size: 11px;
+            margin-bottom: 5px;
+        }
+        .search-box-container a{
+            color: yellow;
+        }
+        .search-box-container span{
+            color: black;
+        }
+    .header .search-box{
+        vertical-align: top;
+        display: inline-block;
+        background-color: #444444;
+        border-radius: 10px;
+        height: 33px;
+        padding: 20px;
+        border-bottom: 2px solid #222d37;        
+        border-right: 2px solid #222d37;
+    }
+    .header #search{
+        height: 30px;
+        text-align: center;
+    }
+    .header #submit{
+        height: 28px;
+        width: 28px;
+        background-color: #2d577c;
+        border: 1px white solid;
+    }
+
+    
+.navigation-bar-container{
+    display: block;
+    min-height: 40px;
+    width: 800px;
+    margin: 0px auto;
+}
+    .navigation-bar-container .nav-bar{
+        background-color: #407bad;
+        border-radius: 10px;
+        border-bottom: 2px solid #222d37;
+        border-right: 2px solid #222d37;
+        padding: 0px 20px;
+        min-height: 40px;
+    }
+        .nav-bar li{
+            vertical-align: middle;
+            padding: 7px;
+            margin: 5px 19.9px;
+            display: inline-block;
+        }
+.main-content{
+    min-height: 285px;
+    padding: 20px;
+    margin: 0px 85px;
+}
+    .main-content .content-menu{
+        vertical-align: top;
+        display: inline-block;
+        text-align: center;
+        padding: 10px 0px;
+    }
+        .content-menu li{
+            list-style-position: inside;
+            line-height: 30px;
+            color: yellow;
+        }
+        .content p{
+            margin-left: 10px;
+            width: 570px;
+            white-space:normal;
+            text-align:center;
+            font-size: 13px;
+        }
+        .content h3{
+            line-height: 40px;
+            white-space: pre-line;
+            text-align: center;
+        }
+        h3 span{
+            color: #d1b83f;            
+            font-style: italic;
+            font-weight: normal;
+        }
+    .main-content .content{
+        vertical-align: top;
+        display: inline-block;
+        width: 600px;
+    }
+
+.sub-navigation-bar{
+    border-top: 2px #222d37 solid;
+    background-color: white;
+    min-height: 200px;
+    padding: 12px 0px;
+}
+    
+    .getting-started , .applications{
+        width: 350px;
+        text-align: center;
+    }
+
+    .border-top-started{
+        border-top: 5px solid #73a7d5;
+        vertical-align: top;
+        display: inline-block;
+        width: 390px;
+        margin-left: 83px;
+        color: black;
+    }
+        .getting-started-menu ul li{
+            width: 280px;
+            list-style-type: square;
+            margin-left: 30px;
+        }
+        .getting-started-menu ul li a{
+            display: block;
+        }
+    .border-top-application{
+        border-top: 5px solid #73a7d5;
+        vertical-align: top;
+        display: inline-block;
+        width: 390px;
+        margin-left: 20px;
+    }
+        .applications-menu ul li{
+            list-style-type: square;
+            margin-left: 50px;
+        }
+        .applications-menu ul li a{
+            display: block;
+            margin-left: -40px;
+        }
+
+        h4,.sub-navigation-bar p, .sub-navigation-bar a, .sub-navigation-bar li{
+            color: black;
+        }
+        span, .sub-navigation-bar a{
+            color: #96bde0;
+        }
+.footer ul li{
+    display: inline-block;
+    margin-left: 120px;
+}
+h5{
+    text-align: center;
+    font-size: 10px;
+}
