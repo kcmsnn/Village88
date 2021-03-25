@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>   
+    
+    <title>Date Validation</title>
+    <script>
+
+        $(document).ready(function () {
+            $( ".datepicker" ).datepicker();    
+            
+            $('#form').submit(function () {  
+                var date_from = $("#date_from").val(); 
+                var date_to = $("#date_to").val();
+                var name =  $("#name").val();    
+                        
+                alert('Thanks '+ name + '! Your Cruise will leave on '+ date_from +' and returns on '+ date_to);
+                return false;
+            });
+        });
+
+    </script>
+    <style>
+        .container{
+            width: 500px;
+            display: block;
+            margin: 0px auto;
+            text-align: center;
+        }
+        table{
+            margin-left: auto;
+            margin-right: auto;
+            text-align: left;
+        }
+            table tr td input{
+                display: block;
+                margin: 0px auto;
+            }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Welcome to the Coding Dojo plan-a-Cruise</h2>
+        <form action="process.php" id="form" method="post">            
+            <table>
+                <tr>
+                    <td><p>From: </p></td>
+                    <td><input type="text" class="datepicker" name="date_from" id="date_from"></td>
+                </tr>
+                <tr>
+                    <td><p>To: </p></td>
+                    <td><input type="text" class="datepicker" name="date_to" id="date_to"></td>
+                </tr>
+                <tr>
+                    <td><p>Name: </p></td>
+                    <td><input type="text" id="name" placeholder="Name" name="Name"></td>
+                </tr>
+                <tr>
+                    <td colspan="2"><input type="submit" id="submit" value="Check Date"></td>
+                </tr>
+            </table>
+        </form>
+    </div>
+</body>
+</html>
