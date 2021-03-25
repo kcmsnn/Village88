@@ -12,15 +12,22 @@
     <script>
 
         $(document).ready(function () {
-            $( ".datepicker" ).datepicker();    
+            $( ".datepicker" ).datepicker(); 
+            $('.popup').hide();   
             
             $('#form').submit(function () {  
-                var date_from = $("#date_from").val(); 
-                var date_to = $("#date_to").val();
-                var name =  $("#name").val();    
-                        
-                alert('Thanks '+ name + '! Your Cruise will leave on '+ date_from +' and returns on '+ date_to);
-                return false;
+                if($("#name").val() != ''){
+                    var date_from = $("#date_from").val(); 
+                    var date_to = $("#date_to").val();
+                    var name =  $("#name").val();    
+                    
+                    $('.popup').hide();   
+                    alert('Thanks '+ name + '! Your Cruise will leave on '+ date_from +' and returns on '+ date_to);
+                    return false;
+                }else{
+                    $('.popup').show();                   
+                    return false;                
+                }
             });
         });
 
@@ -58,7 +65,9 @@
                 </tr>
                 <tr>
                     <td><p>Name: </p></td>
-                    <td><input type="text" id="name" placeholder="Name" name="Name"></td>
+                    <td><input type="text" id="name" placeholder="Name" name="Name"></td>                    
+                    <td><p class="popup">Name cannot be blank!</p></td>
+
                 </tr>
                 <tr>
                     <td colspan="2"><input type="submit" id="submit" value="Check Date"></td>
