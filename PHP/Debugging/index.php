@@ -1,17 +1,16 @@
-<?php
-
-$heads = 0;
-$tails = 0;
-echo "<h2><u>Starting the program</u></h2>";
-for ($i=0; $i < 5000 ; $i++) { 
-    $coinflip = rand(1,2);
-    if($coinflip == 1){
-        $heads++;
-        echo "Attempt #" . $i . ": Throwing a coin... It's a head! ... Got " . $heads . " head(s) so far and " . $tails . " tail(s) so far<br/>";
-    }else if($coinflip == 2){
-        $tails++;
-        echo "Attempt #" . $i . ": Throwing a coin... It's a Tail! ... Got " . $heads . " head(s) so far and " . $tails . " tail(s) so far<br/>";
-    }
+<?php  
+echo "<h2> Fix all the errors to show the page </h2>";
+$array = array("var_dump", "and", "echo", "helps", "debug");
+for($i = 0; $i < count($array); $i++){
+  echo "The value of the " . $i . " index is " . $array[$i] . "<br>";
 }
-echo "<h2><u>Ending the program</u></h2>";
+echo "<h3>isset function determines if a variable is set and is not NULL</h3>";
+$error = '';
+if(isset($error)) {
+  echo "Is an empty string NULL? Also, think of an operator that we can use to return a true value to a variable that is not set yet!!!!!";
+}
+if(isset($array[0])){
+    echo "<br>";
+    echo var_dump($array);
+}
 ?>

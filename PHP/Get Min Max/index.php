@@ -1,17 +1,20 @@
 <?php
 
-$heads = 0;
-$tails = 0;
-echo "<h2><u>Starting the program</u></h2>";
-for ($i=0; $i < 5000 ; $i++) { 
-    $coinflip = rand(1,2);
-    if($coinflip == 1){
-        $heads++;
-        echo "Attempt #" . $i . ": Throwing a coin... It's a head! ... Got " . $heads . " head(s) so far and " . $tails . " tail(s) so far<br/>";
-    }else if($coinflip == 2){
-        $tails++;
-        echo "Attempt #" . $i . ": Throwing a coin... It's a Tail! ... Got " . $heads . " head(s) so far and " . $tails . " tail(s) so far<br/>";
+$sample = array( 135, 2.4, 2.67, 1.23, 332, 2, 1.02);
+function get_Min_Max($sample){    
+    $output['max'] = $sample[0];
+    $output['min'] = $sample[0];
+    for ($i=0; $i < count($sample); $i++) { 
+        if($sample[$i] > $output['max']){
+            $output['max'] = $sample[$i];
+        }else if($sample[$i] < $output['min']){
+            $output['min'] = $sample[$i];
+        }
     }
+    return $output;
 }
-echo "<h2><u>Ending the program</u></h2>";
+$A = get_Min_Max($sample);
+var_dump($A);
+
+
 ?>
