@@ -1,10 +1,10 @@
 <?php
 
-$array_variable = array();
-for ($i=0; $i <= 20000 ; $i++) { 
+for ($i=1; $i <= 20000 ; $i++) { 
     if ($i%2==1) {
-        array_push($array_variable,$i);
+        echo('Number is ' . $i . '. This is  an odd number.<br>');
+    }else if ($i%2==0) {
+        echo('Number is ' . $i . '. This is  an even number.<br>');
     }
 }
-var_dump($array_variable);
 ?>
