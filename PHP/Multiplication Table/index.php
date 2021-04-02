@@ -15,9 +15,6 @@ table{
     border-collapse: collapse;
     text-align: center;
 }
-table .color_1{
-    background-color:white;
-}
 table .color_2{
     background-color:gray;
 }
@@ -25,7 +22,6 @@ table .color_2{
         border: 1px solid black;
         padding: 0px 40px;
     }
-
 </style>
 <body>
     <table>

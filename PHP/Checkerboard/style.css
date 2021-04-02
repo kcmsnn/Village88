@@ -1,0 +1,25 @@
+*{
+    padding: 0px;
+    margin: 0px;
+}
+.board1, .board2{
+    padding: 10px;
+}
+.board1 div, .board2 div{
+    margin: -2px;
+    height: 30px;
+    width: 30px;
+    display: inline-block;
+}
+    div .color_1{
+        background-color: red;
+    }
+    div .color_2{
+        background-color: black;
+    }
+    div .color1_1{
+        background-color: white;
+    }
+    div .color1_2{
+        background-color: limegreen;
+    }
