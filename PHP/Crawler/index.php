@@ -1,17 +1,23 @@
 <?php
+    //connecting to a remote url using curl
 
-$heads = 0;
-$tails = 0;
-echo "<h2><u>Starting the program</u></h2>";
-for ($i=0; $i < 5000 ; $i++) { 
-    $coinflip = rand(1,2);
-    if($coinflip == 1){
-        $heads++;
-        echo "Attempt #" . $i . ": Throwing a coin... It's a head! ... Got " . $heads . " head(s) so far and " . $tails . " tail(s) so far<br/>";
-    }else if($coinflip == 2){
-        $tails++;
-        echo "Attempt #" . $i . ": Throwing a coin... It's a Tail! ... Got " . $heads . " head(s) so far and " . $tails . " tail(s) so far<br/>";
-    }
-}
-echo "<h2><u>Ending the program</u></h2>";
+    //see http://www.php.net/manual/en/function.curl-setopt.php for more info
+    $url = "http://www.espn.com";
+    $ch = curl_init();
+    curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+    curl_setopt($ch, CURLOPT_CONNECTTIMEOUT, 30);
+    curl_setopt($ch, CURLOPT_URL, $url);
+    curl_setopt($ch, CURLOPT_FOLLOWLOCATION, 1); 
+    $data = curl_exec($ch);
+    $info = curl_getinfo($ch);  
+    curl_close($ch);
+
+    echo "<h1>Data</h1>";
+    echo "<pre>".htmlentities($data)."</pre>";
+
+    echo "<h1>Info</h1>";
+    echo "<pre>";
+    var_dump($info);
+    echo "</pre>";
+
 ?>
