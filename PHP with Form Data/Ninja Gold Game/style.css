@@ -40,8 +40,10 @@
         line-height:1em;
         overflow:auto;
         padding:5px;    
-        color: green;  
     }
-    .lost{
+    .red{
         color: red;
+    }
+    .green{
+        color: green;
     }

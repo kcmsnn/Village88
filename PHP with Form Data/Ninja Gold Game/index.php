@@ -1,8 +1,8 @@
 <?php
 session_start();
 if (empty($_SESSION)) { 
-    $_SESSION['log'] = NULL;
-    $_SESSION['gold'] = 0;
+    $_SESSION['log'] = '';
+    $_SESSION['total_gold'] = 0;
 }
 ?>
 <!DOCTYPE html>
@@ -17,7 +17,7 @@ if (empty($_SESSION)) {
 <body>
     <div class='container'>
         <h2>Your Gold: </h2>
-        <h2 class = 'gold-counter'><?= $_SESSION['gold'];?></h2>
+        <h2 class = 'gold-counter'><?= $_SESSION['total_gold'];?></h2>
         <div class='building-container'>
             <div class='farm-building'>
                 <h3>Farm</h3>
@@ -56,8 +56,12 @@ if (empty($_SESSION)) {
         <div class='activities-box'>
             <?php
             if (!empty($_SESSION['log']) ) {
-                foreach ($_SESSION['log'] as $key => $value) { ?>
-                    <p><?= $value; ?></p>
+                foreach ($_SESSION['log'] as $key => $value) { 
+                    if($value['color'] == "green"){?>
+                        <p class='<?= $value['color']; ?>'>You entered a <?= $value['building']; ?> and earned <?= $value['earn']; ?> golds. (<?= $value['datetime']; ?>)</p>
+                <?php }else if($value['color'] == "red"){ ?>
+                        <p class='<?= $value['color']; ?>'> You entered a <?= $value['building']; ?> and lost <?= -($value['earn']); ?> golds... Ouch.. (<?= $value['datetime']; ?>)</p>
+                <?php } ?>
                 <?php } ?>
             <?php } ?>
         </div>
