@@ -1,50 +1,76 @@
-
+<?php
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <title>Survey Form</title>
+    <title>Registration without DB</title>
 </head>
 <body>
     <div class='container'>
-        <form action="result.php" method="post">
+        <form action="process.php" method="post">
         <table>
             <tr>
-                <td><label for="name">Your Name:</label></td>
-                <td><input type="text" name="name" id="name"></td>
-            </tr>
-            <tr>
-                <td><label for="location">Dojo Location:</label></td>
+                <td><label for="email">Email:</label></td>
+                <td><input type="email" name="email" id="email"></td>
                 <td>
-                    <select name="location" id="location">
-                        <option value="NY">New York</option>
-                        <option value="NJ">New Jersey</option>
-                        <option value="PH">Philippines</option>                
-                    </select>
+                <?php
+                if (isset($_SESSION['email_errors'])) {
+                    foreach ($_SESSION['email_errors'] as $errors) {
+                        echo $errors;
+                    }
+                }
+                ?>
                 </td>
             </tr>
             <tr>
-                <td><label for="favorite">Favorite Language:</label></td>
+                <td><label for="first_name">First Name:</label></td>
+                <td><input type="text" name="first_name" id="first_name"></td>
                 <td>
-                    <select name="favorite" id="favorite">
-                        <option value="javascript">Javascript</option>
-                        <option value="php">PHP</option>
-                        <option value="csharp">C#</option>                
-                    </select> 
+                <?php
+                if (isset($_SESSION['fname_errors'])) {
+                    foreach ($_SESSION['fname_errors'] as $errors) {
+                        echo $errors;
+                    }
+                }
+                ?>
                 </td>
             </tr>
             <tr>
-                <td colspan='2'><label for="comment">Comment (optional):</label></td>
+                <td><label for="last_name">Last Name:</label></td>
+                <td><input type="text" name="last_name" id="last_name"></td>
+                <td>
+                <?php
+                if (isset($_SESSION['lname_errors'])) {
+                    foreach ($_SESSION['lname_errors'] as $errors) {
+                        echo $errors;
+                    }
+                }
+                ?>
+                </td>
             </tr>
             <tr>
-                <td colspan='2'><textarea name="comment" id="comment" cols="40" rows="10"></textarea></td>
+                <td><label for="password">Password:</label></td>
+                <td><input type="password" name="password" id="password"></td>
             </tr>
             <tr>
-                <td colspan='2'><input type="submit" value="submit" class="submit"></td>
+                <td><label for="confirm_password">Confirm Password:</label></td>
+                <td><input type="password" name="confirm_password" id="confirm_password"></td>
             </tr>
+            <tr>
+                <td><label for="birth_date"> Birth Date:</label></td>
+                <td><input type="date" name="birth_date" id="birth_date"></td>
+            </tr>
+            <tr>
+                <td><label for="profile_pic"> Profile Picture:</label></td>
+                <td><input type="file" name="profile_pic" id="profile_pic"></td>
+            </tr>
+            <tr>
+                <td colspan='2'><input type="submit" value="submit"></td>
+            </tr>   
         </table>
         </form>
     </div>

@@ -40,6 +40,7 @@ if($_POST['building'] == 'farm'){
 }
 
 $_SESSION['log'][] = $log;
+var_dump($_SESSION['log']);
 $_SESSION['total_gold'] += $log['earn'];
 header('Location: index.php');
 ?>

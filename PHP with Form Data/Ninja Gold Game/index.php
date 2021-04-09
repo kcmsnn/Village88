@@ -1,7 +1,7 @@
 <?php
 session_start();
 if (empty($_SESSION)) { 
-    $_SESSION['log'] = '';
+    $_SESSION['log'] = NULL;
     $_SESSION['total_gold'] = 0;
 }
 ?>
