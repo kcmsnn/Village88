@@ -1,0 +1,66 @@
+*{
+    padding: 0px;
+    margin: 0px;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.container{
+    min-height: 300px;
+    width: 920px;
+    border: 1px solid black;
+    margin: 0px auto;
+    padding: 10px;
+    padding: 20px;
+}
+select{
+    width: 166px;
+}
+table{
+    margin: 0px auto;
+}
+table .submit{
+    margin-left: 125px;
+}
+h3{
+    text-decoration: underline;
+} 
+    .gold-counter{
+        border: 1px solid black;
+        min-height: 10px;
+        width: 200px;
+        padding: 10px;
+    }
+    h2{
+        display: inline-block;
+        vertical-align: middle;
+        margin-bottom: 20px;
+    }
+    .building-container{
+        margin-top: 30px;
+    }
+        .building-container div{
+            border: 1px solid black;
+            min-height: 150px;
+            width: 200px;
+            display: inline-block;
+            vertical-align: top;
+            text-align: center;
+            padding: 10px;
+        }
+            div h3,p{
+                margin-bottom: 20px;
+            }
+    .activities-box{
+        border: 1px solid black;  
+        width:905px;
+        height:150px;
+        line-height:1em;
+        overflow:auto;
+        padding:5px;     
+    }
+    .red{
+        color: red;
+    }
+    .green{
+        color: green; 
+    }
