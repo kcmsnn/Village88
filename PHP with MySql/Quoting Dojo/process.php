@@ -4,28 +4,30 @@ session_start();
 
 if (isset($_POST['submit'])) {
     if (empty($_POST['name'])) {
-        $_SESSION['error']['name'] = 'Name is Required!';
+        $_SESSION['name_error'] = 'Name is Required!';
+        header('Location: index.php'); 
     } else {
         if (!preg_match("/^[a-zA-Z\s]+$/",$_POST['name'])) {
-            $_SESSION['error']['name'] = 'Name should not contain any numbers!';
+            $_SESSION['name_error'] = 'Name should not contain any numbers!';
             unset($_SESSION['old']['name']);
+            header('Location: index.php'); 
         }else {
-            unset($_SESSION['error']['name']);
+            unset($_SESSION['name_error']);
             $_SESSION['old']['name'] = $_POST['name'];  
             $name = $_POST['name'];       
         }
     }    
     if (empty($_POST['quotes'])) {
-        $_SESSION['error']['quotes'] = 'Quotes should not be Empty!';
+        $_SESSION['quotes_error']= 'Quotes should not be Empty!';
+        header('Location: index.php'); 
     } else {
-        unset($_SESSION['error']['quotes']);
+        unset($_SESSION['quotes_error']);
         $quote = $_POST['quotes'];
         $query = "INSERT INTO quote (creator_name, quote, date_created)
                   VALUES('$name', '$quote', NOW())";                  
-        $runscript = run_mysql_query($query);
+        $runscript = run_mysql_query($query);        
+        header('Location: main.php'); 
                
     }  
-
-    header('Location: main.php'); 
 }
 ?>

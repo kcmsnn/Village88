@@ -17,21 +17,24 @@ session_start();
         <tr>
             <td><label for="name">Your Name:</label></td>
             <td><input type="text" name="name" id="name"></td>
+            <?php
+            if (isset($_SESSION['name_error'])) {?>                    
+            <td><?= $_SESSION['name_error'];?></td>
+            <?php   }?>
         </tr>
         <tr>
             <td><label for="quotes">Your Quote:</label></td>
-            <td><textarea name="quotes" id="quotes" cols="40" rows="10"></textarea></td>
+            <td><textarea name="quotes" id="quotes" cols="40" rows="10"></textarea></td>            
+            <?php
+            if (isset($_SESSION['quotes_error'])) {?>                    
+            <td><?= $_SESSION['quotes_error'];?></td>
+            <?php   }?>
+            
         </tr> 
         <tr>
             <td colspan=2> <input type="submit" value="Add quotes" name="submit"> <button><a href = 'main.php'>Skip  to quotes</a></button></td>
         </tr>  
     </table>     
     </form>
-    <?php
-            if (isset($_SESSION['error'])) {
-                foreach ($_SESSION['error'] as $errors) { ?>
-                    <p><?= $errors;?></p>
-        <?php   }?>
-    <?php   } ?>
 </body>
 </html>
