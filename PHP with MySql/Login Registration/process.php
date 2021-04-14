@@ -14,8 +14,8 @@ if (isset($_POST['submit'])) {
 
 function user_register($post){
     //First Name Validation 
-    if (empty($post['first_name'])) {
-        $_SESSION['error'][] = 'First Name is Required!';
+    if (empty($post['first_name'])strlen($post['first_name']) < 2) {
+        $_SESSION['error'][] = 'First Name length should be atleast higher than 2!';
     } else {
         if (!preg_match("/^[a-zA-Z\s]+$/",$post['first_name'])) {
             $_SESSION['error'][] = 'First Name should not contain any numbers!';
@@ -23,8 +23,8 @@ function user_register($post){
     }
 
     //Last Name Validation 
-    if (empty($post['last_name'])) {
-        $_SESSION['error'][] = 'Last Name is Required!';
+    if (empty($post['last_name']) || strlen($post['last_name']) < 2) {
+        $_SESSION['error'][] = 'Last Name length should be atleast higher than 2!';
     } else {
         if (!preg_match("/^[a-zA-Z\s]+$/",$post['last_name'])) {
             $_SESSION['error'][] = 'Last Name should not contain any numbers!';
@@ -39,8 +39,8 @@ function user_register($post){
         }
     }
     //Password Validation
-    if (empty($post['password']) || strlen($post['password']) < 6) {
-        $_SESSION['error'][] = 'Password Length should be more than 6!';
+    if (empty($post['password']) || strlen($post['password']) < 8) {
+        $_SESSION['error'][] = 'Password Length should be more than 8!';
     }else {
         //Password Confirmation
         if (empty($post['confirm_password']) || ($post['confirm_password'] !== $post['password'])) {
