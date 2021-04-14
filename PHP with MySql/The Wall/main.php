@@ -1,5 +1,10 @@
 <?php
 include('process.php');
+if (!isset($_SESSION['logged_in'])) {  
+    session_destroy();  
+    header('location: main.php');
+    die();
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -15,7 +20,7 @@ include('process.php');
         <div class="header">
         <h2>CodingDojo Wall</h2>
         <h3>Welcome <?=$_SESSION['first_name']?>!</h3>
-        <a href="index.php">Log off</a>
+        <a href="logoff.php">Log off</a>
         </div>
         <div class="content">
             <div class="post_message">
@@ -34,11 +39,10 @@ include('process.php');
             if (!empty($message_rows) ) {
                 foreach ($message_rows as $rows) { 
                     $message_id = $rows['messages_id'];
-                    $_SESSION['message_id'] = $rows['messages_id'];
                     $time = strtotime($rows['created_at']);
                     $myFormatForView = date("F d Y ", $time);?>
                     <section class="message">
-                        <h2><?= $rows['Name'] . ' - ' . $myFormatForView . $_SESSION['message_id'] ?> </h2>
+                        <h2><?= $rows['Name'] . ' - ' . $myFormatForView ?> </h2>
                         <p><?= $rows['message'];?></p>    
                     </section> 
                     <section class ="comment">                    

@@ -1,5 +1,10 @@
 <?php
 session_start();
+require_once('new_connection.php');
+if (isset($_SESSION['logged_in'])) {    
+    header('location: main.php');
+    die();
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">

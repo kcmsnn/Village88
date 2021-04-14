@@ -5,10 +5,13 @@ session_start();
 if (isset($_POST['submit'])) {
     if (isset($_POST['action']) && $_POST['action'] == 'register') {
         user_register($_POST);
-    }
-    if (isset($_POST['action']) && $_POST['action'] == 'login') {
+    } else if (isset($_POST['action']) && $_POST['action'] == 'login') {
         user_login($_POST);
-    }    
+    } else {
+        session_destroy();
+        header('location: index.php');
+        die();
+    }   
     if (isset($_POST['action']) && $_POST['action'] == 'post_message') {
         user_message($_POST);
     }   
@@ -53,7 +56,6 @@ function user_register($post){
             $_SESSION['error'][] = 'Password and Confirm password does not match!';
         }
     }
-    //var_dump($_SESSION['error']);
 
     if ( $_SESSION['error'] > 0) {
         header('location: index.php');
@@ -88,6 +90,7 @@ function user_login($post){
         {
             $_SESSION['first_name'] = $users[0]['first_name'];
             $_SESSION['user_id'] = $users[0]['user_id'];
+            $_SESSION['logged_in'] = true;
             header('location: main.php');
             die();
         }
