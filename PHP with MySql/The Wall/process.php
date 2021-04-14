@@ -8,6 +8,12 @@ if (isset($_POST['submit'])) {
     }
     if (isset($_POST['action']) && $_POST['action'] == 'login') {
         user_login($_POST);
+    }    
+    if (isset($_POST['action']) && $_POST['action'] == 'post_message') {
+        user_message($_POST);
+    }   
+    if (isset($_POST['action']) && $_POST['action'] == 'post_comment') {
+        user_comment($_POST);
     }
 }
 
@@ -80,7 +86,10 @@ function user_login($post){
         $encrypted_password = md5($password . '' . $users[0]['salt']);
         if($users[0]['password'] == $encrypted_password)
         {
-            $_SESSION['success'] = "<p class='success'> You now logged in!</p>";
+            $_SESSION['first_name'] = $users[0]['first_name'];
+            $_SESSION['user_id'] = $users[0]['user_id'];
+            header('location: main.php');
+            die();
         }
         else
         {
@@ -90,7 +99,37 @@ function user_login($post){
         $_SESSION['error'][] = 'Email is not valid!';
     }
     
-    header('location: index.php');
-    die();
+}
+
+function user_message($post){
+    $id = $_SESSION['user_id'];
+    $message = $_POST['message'];
+    if (empty($_POST['message'])) {
+        $_SESSION['message_error']= 'message should not be Empty!';
+        header('Location: main.php'); 
+    } else {
+        unset($_SESSION['message_error']);
+        $query = "INSERT INTO wall_messages (user_id, message, created_at, updated_at)
+                  VALUES('{$id}', \"{$message}\", NOW(), NOW())";                  
+        $runscript = run_mysql_query($query);
+        header('Location: main.php'); 
+    }
+}
+
+function user_comment($post){
+    $user_id = $_SESSION['user_id'];
+    $message_id = $_POST['message_id'];
+    $comment = $_POST['comment'];
+    if (empty($_POST['comment'])) {
+        $_SESSION['comment_error']= 'comment should not be Empty!';
+        //header('Location: main.php'); 
+    } else {
+        unset($_SESSION['comment_error']);
+        $query = "INSERT INTO comments (users_id, messages_id, comment, created_at, updated_at)
+                  VALUES('{$user_id}', '$message_id', \"{$comment}\", NOW(), NOW())";                  
+        $runscript = run_mysql_query($query);  
+        //header('Location: main.php'); 
+        var_dump($_POST);
+    }
 }
 ?>
