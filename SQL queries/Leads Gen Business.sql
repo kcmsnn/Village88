@@ -85,5 +85,5 @@ ORDER BY billing.client_id, charged_datetime;
 #Group the results so that each row shows a new client. 
 #It will become clearer when you add a new field called 'sites' that has all the sites that the client owns. (HINT: use GROUP_CONCAT)
 SELECT CONCAT(clients.first_name, ' ', clients.last_name)  AS client_name, GROUP_CONCAT(sites.domain_name SEPARATOR ' / ') AS sites FROM clients
-INNER JOIN sites ON clients.client_id = sites.client_id
-GROUP BY clients.client_id
+RIGHT JOIN sites ON clients.client_id = sites.client_id
+GROUP BY sites.client_id
