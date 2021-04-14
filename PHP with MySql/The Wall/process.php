@@ -2,22 +2,19 @@
 require_once('new_connection.php');
 session_start();
 
-if (isset($_POST['submit'])) {
-    if (isset($_POST['action']) && $_POST['action'] == 'register') {
-        user_register($_POST);
-    } else if (isset($_POST['action']) && $_POST['action'] == 'login') {
-        user_login($_POST);
-    } else {
-        session_destroy();
-        header('location: index.php');
-        die();
-    }   
+if (isset($_POST['submit'])) {    
     if (isset($_POST['action']) && $_POST['action'] == 'post_message') {
         user_message($_POST);
     }   
     if (isset($_POST['action']) && $_POST['action'] == 'post_comment') {
         user_comment($_POST);
     }
+    if (isset($_POST['action']) && $_POST['action'] == 'register') {
+        user_register($_POST);
+    } else if (isset($_POST['action']) && $_POST['action'] == 'login') {
+        user_login($_POST);
+    }   
+
 }
 
 
@@ -125,13 +122,13 @@ function user_comment($post){
     $comment = $_POST['comment'];
     if (empty($_POST['comment'])) {
         $_SESSION['comment_error']= 'comment should not be Empty!';
-        //header('Location: main.php'); 
+        header('Location: main.php'); 
     } else {
         unset($_SESSION['comment_error']);
         $query = "INSERT INTO comments (users_id, messages_id, comment, created_at, updated_at)
                   VALUES('{$user_id}', '$message_id', \"{$comment}\", NOW(), NOW())";                  
         $runscript = run_mysql_query($query);  
-        //header('Location: main.php'); 
+        header('Location: main.php'); 
         var_dump($_POST);
     }
 }

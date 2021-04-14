@@ -34,7 +34,7 @@ if (!isset($_SESSION['logged_in'])) {
             <div class="display_message">    
 <?php
             $message_query = "SELECT wall_messages.messages_id, CONCAT(users.first_name,' ',users.last_name) AS Name, wall_messages.message, wall_messages.created_at FROM wall_messages 
-                            INNER JOIN users ON wall_messages.user_id = users.user_id";
+                            INNER JOIN users ON wall_messages.user_id = users.user_id ORDER BY wall_messages.messages_id DESC";
             $message_rows = fetch_all($message_query);
             if (!empty($message_rows) ) {
                 foreach ($message_rows as $rows) { 
@@ -67,7 +67,7 @@ if (!isset($_SESSION['logged_in'])) {
                                     <textarea name="comment" id="comment_area"></textarea>
                                     <input type="submit" value="comment" name="submit" id="comment">
                                 </form>                                   
-                    </section>                    
+                    </section>               
 <?php           } ?>
 <?php       } ?>
             </div>
