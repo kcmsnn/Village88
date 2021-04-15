@@ -1,0 +1,31 @@
+*{
+    padding: 0px;
+    margin: 0px;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 11pt;
+}
+.container{
+    width: 100%;
+    text-align: center;
+} 
+.records{
+    height: 700px;
+    overflow: scroll;
+}
+    table{
+        border-collapse: collapse;
+    }
+    table tr td{
+        padding: 10px;
+        min-width: 220px;
+        height: 60px;
+    }
+    table thead{
+        border-bottom: 1px solid black;
+    }
+    .no{
+        min-width: 20px;
+    }
+    table .color0{
+        background-color: royalblue;
+    }
