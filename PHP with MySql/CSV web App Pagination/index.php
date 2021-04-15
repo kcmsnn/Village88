@@ -41,22 +41,13 @@ if (isset($_SESSION['uploaded'])) {
 <?php   } ?> 
             </tr>
         </thead>
-    <?php   foreach ($data as $key => $value) { ?>                     
+<?php     foreach ($data as $key => $value) { ?>                  
                 <tr class="color<?=$key%2;?>">
-                    <td class="no"><?= $key+1; ?></td>
-                    <td><?= $value['first_name']; ?></td>
-                    <td><?= $value['last_name']; ?></td>
-                    <td><?= $value['company_name']; ?></td>
-                    <td><?= $value['address']; ?></td>
-                    <td><?= $value['city']; ?></td>
-                    <td><?= $value['county']; ?></td>
-                    <td><?= $value['state']; ?></td>
-                    <td><?= $value['zip']; ?></td>
-                    <td><?= $value['phone1']; ?></td>
-                    <td><?= $value['phone2']; ?></td>
-                    <td><?= $value['email']; ?></td>
-                    <td><?= $value['web']; ?></td>
-                </tr>          
+                <td class="no"><?= $key+1; ?></td>
+<?php           foreach ($value as $key1 => $value1) {?> 
+                    <td><?= $value1;?></td>
+<?php           } ?>    
+                </tr>      
 <?php       } 
 $number_of_pages = ceil(count($data1)/$result_per_page);?>     
     </table>

@@ -8,7 +8,7 @@ if (isset($_SESSION['uploaded'])){
     $header = null;
     $data = array();
     
-    while(($content = fgetcsv($file,1000,',')) !== FALSE){
+    while(($content = fgetcsv($file)) !== FALSE){
         if ($header === NULL){
             $header = $content;
             continue;
