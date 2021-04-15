@@ -65,7 +65,8 @@ $number_of_pages = ceil(count($data1)/$result_per_page);?>
 <?php   if (isset($_SESSION['uploaded'])){
             for ($i=1;$i <= $number_of_pages; $i++){ ?>
               <a href="index.php?page=<?=$i?>"><?=$i?></a>
-<?php } ?><?php } ?>
+<?php       } ?>
+<?php } ?>
 </div>      
 </body>
 </html>
