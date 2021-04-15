@@ -24,10 +24,22 @@
         margin-top: 20px;
         width: 900px;
         min-height: 100px;
-    }
+    }        
         .display_message .comment{
             margin-left: 20px;
-        }
+        }         
+            .message h2{
+                display: inline-block;
+                vertical-align: middle;
+            }
+                .message a{
+                    background-color: lightcoral;
+                    padding: 5px;
+                    text-align: center;
+                    text-decoration: none;
+                    color: black;
+                    border: 1px solid black;
+                }
         .post_message #message_area{
             margin: 10px 25px;
             height: 50px;

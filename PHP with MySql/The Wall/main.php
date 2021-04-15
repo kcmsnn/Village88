@@ -12,7 +12,7 @@ if (!isset($_SESSION['logged_in'])) {
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style1.css">
+    <link rel="stylesheet" href="style.css">
     <title>The Wall</title>
 </head>
 <body>
@@ -33,16 +33,17 @@ if (!isset($_SESSION['logged_in'])) {
             </div>
             <div class="display_message">    
 <?php
-            $message_query = "SELECT wall_messages.messages_id, CONCAT(users.first_name,' ',users.last_name) AS Name, wall_messages.message, wall_messages.created_at FROM wall_messages 
-                            INNER JOIN users ON wall_messages.user_id = users.user_id ORDER BY wall_messages.messages_id DESC";
+            $message_query = "SELECT wall_messages.messages_id, users.user_id, CONCAT(users.first_name,' ',users.last_name) AS Name, wall_messages.message, wall_messages.created_at FROM wall_messages 
+                            LEFT JOIN users ON wall_messages.user_id = users.user_id ORDER BY wall_messages.messages_id DESC";
             $message_rows = fetch_all($message_query);
             if (!empty($message_rows) ) {
                 foreach ($message_rows as $rows) { 
                     $message_id = $rows['messages_id'];
+                    $_SESSION['mUser_id'] = $rows['user_id'];
                     $time = strtotime($rows['created_at']);
                     $myFormatForView = date("F d Y ", $time);?>
                     <section class="message">
-                        <h2><?= $rows['Name'] . ' - ' . $myFormatForView ?> </h2>
+                        <h2><?= $rows['Name'] . ' - ' . $myFormatForView . $rows['user_id']?></h2><a href="delete.php">Delete Message</a>
                         <p><?= $rows['message'];?></p>    
                     </section> 
                     <section class ="comment">                    
