@@ -18,10 +18,10 @@ class bike
         echo "Max Speed: " . $this->max_speed . "<br>";
         echo "Miles: " . $this->miles . "<br>";
         
-        return $this;
     }
     public function drive(){
         $this->miles += 10;
+        $this->price += 10;
         echo "Driving... <br>";
         return $this;
     }
@@ -31,8 +31,8 @@ class bike
         }else {
             $this->miles -= 10;
             echo "Reverse... <br>";
-        }        
-        return $this;
+        }    
+        return $this;    
     }
 }
 ?>

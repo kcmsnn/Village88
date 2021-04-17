@@ -15,10 +15,10 @@
         $bike3 = new bike(3000,120,0);
 ?>
 <h2>Bike 1 Info</h2>
-<?= $bike1->drive()->drive()->drive()->reverse()->displayInfo(); ?>
+<?php $bike1->drive()->drive()->drive()->reverse()->displayInfo(); ?>
 <h2>Bike 2 Info</h2>
-<?= $bike2->drive()->drive()->reverse()->reverse()->displayInfo(); ?>
+<?php $bike2->drive()->drive()->reverse()->reverse()->displayInfo(); ?>
 <h2>Bike 3 Info</h2>
-<?= $bike3->reverse()->reverse()->reverse()->displayInfo(); ?>
+<?php $bike3->reverse()->reverse()->reverse()->displayInfo(); ?>
 </body>
 </html>
